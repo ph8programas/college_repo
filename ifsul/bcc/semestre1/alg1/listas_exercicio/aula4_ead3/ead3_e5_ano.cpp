@@ -1,3 +1,9 @@
+// Autor: Pedro H.C Rossetto
+// Data: 29/03/2025
+// Descrição: Código para verificar ano bissexto
+// Lista EAD 3, Exercício 5, Algoritimos 1
+
+
 #include <iostream>
 #include <string>
 using namespace std;
