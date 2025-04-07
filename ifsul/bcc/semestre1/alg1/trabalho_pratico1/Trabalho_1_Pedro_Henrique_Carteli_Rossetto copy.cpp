@@ -1,5 +1,5 @@
 // Autor: Pedro H.C Rossetto
-// Data: 20703/2025
+// Data: 27/03/2025
 // Descrição: Código oara calcular valor da compra e valor de desconto.
 // Trabalho prático 1, Exercício 1, Algoritimos 1
 
