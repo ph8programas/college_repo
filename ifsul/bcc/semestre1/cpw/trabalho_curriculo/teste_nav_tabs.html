@@ -1,0 +1,59 @@
+<!--site basico para testar nav tabs--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Teste de Nav Tabs</h1>
+    <div class="nav-tabs">
+        <ul>
+            <li><a href="#tab1">Tab 1</a></li>
+            <li><a href="#tab2">Tab 2</a></li>
+            <li><a href="#tab3">Tab 3</a></li>
+        </ul>
+        <div id="tab1" class="tab-content">
+            <h2>Conteúdo da Tab 1</h2>
+            <p>Este é o conteúdo da primeira aba.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <h2>Conteúdo da Tab 2</h2>
+            <p>Este é o conteúdo da segunda aba.</p>
+        </div>
+        <div id="tab3" class="tab-content">
+            <h2>Conteúdo da Tab 3</h2>
+            <p>Este é o conteúdo da terceira aba.</p>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.nav-tabs ul li a');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Hide all tab contents
+                tabContents.forEach(tc => tc.style.display = 'none');
+
+                // Add active class to the clicked tab
+                tab.classList.add('active');
+                // Show the corresponding tab content
+                const target = document.querySelector(tab.getAttribute('href'));
+                target.style.display = 'block';
+            });
+        });
+
+        // Show the first tab by default
+        tabs[0].click();
+    </script>
+
+</body>
+</html>
