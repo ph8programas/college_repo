@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo - Pedro Henrique Carteli Rossetto</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        /* Image Styles */
+        .circular-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        /* List Styles */
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .list-group-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            list-style-type: none;
+            margin-left: -20px;
+        }
+
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* Competence Box */
+        .competence-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Info */
+        .contact-info p {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #3498db;
+        }
+
+        /* Link Styles */
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Styles */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .col-md {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 250px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .circular-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .col-md {
+                flex: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                font-size: 12pt;
+            }
+            
+            .section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+            
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="images/me.jpg" alt="Foto de perfil de Pedro Henrique" class="circular-image" />
+        <h1>Pedro Henrique Carteli Rossetto</h1>
+    </div>
+
+    <!-- Introdução Section -->
+    <div class="section" id="resumo">
+        <h2>Introdução</h2>
+        <ul>
+            <li class="list-group-item">Estudante de Ciência da Computação</li>
+            <li class="list-group-item">Experiência com Análise de dados, Desenvolvimento WEB e vendas</li>
+            <li class="list-group-item">Busco uma colocação no mercado de trabalho na área de Análise de Dados, desenvolvimento WEB ou vendas</li>
+            <li class="list-group-item">Carga horária disponível: 30 horas semanais, Turno Verspertino</li>
+        </ul>
+    </div>
+
+    <!-- Formação Section -->
+    <div class="section" id="formacao">
+        <h2>Formação</h2>
+        <ul>
+            <li class="list-group-item"><b>Ensino Fundamental:</b><br>Colégio Notre Dame de Passo Fundo (2008-2018)</li>
+            <li class="list-group-item"><b>Ensino Médio:</b><br>Colégio Tiradentes da Brigada Militar de Passo Fundo (2019-2021)</li>
+            <li class="list-group-item"><b>Ensino Superior:</b><br> 
+                Relações Internacionais - Universidade Federal do Rio Grande do Sul (2023/1 - 2024/1)<br>
+                Direito - Universidade de Passo Fundo (2024/2)<br>
+                Ciência da Computação - Instituto Federal Sul-Rio-Grandense (IFSUL) Campus Passo Fundo (2025/1 - Em Andamento)
+            </li>
+        </ul>
+    </div>
+    <!-- Idiomas Section -->
+    <div class="section" id="idiomas">
+        <h2>Idiomas</h2>
+        <ul>
+            <li class="list-group-item">
+                <strong>Inglês:</strong>
+                <ul>
+                    <li>Fluente</li>
+                    <li>Rockfeller Idiomas (2017-2020)</li>
+                    <li>Certificado da Universidade de Cambridge C2 - 2023</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Francês:</strong>
+                <ul>
+                    <li>Básico</li>
+                    <li>Conclusão do Curso de Nível A2 pelo CERIDIOMAS - 2023</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Espanhol:</strong>
+                <ul>
+                    <li>Básico</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <strong>Português:</strong>
+                <ul>
+                    <li>Fluente - Nativo</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- Experiência Section -->
+    <div class="section" id="experiencia">
+        <h2>Experiência</h2>
+        <div class="card">
+            <h5 class="card-title">Cargos</h5>
+            <ul>
+                <li class="list-group-item"><a href="https://www.instagram.com/12batalhaodeengenharia/" target="_blank">Exército Brasileiro - 12° BE</a><br> Auxiliar Administrativo<br>(Maio de 2022 - Fevereiro de 2023)</li>
+                <li class="list-group-item"><a href="https://www.atlanticaconsultoria.com/" target="_blank">Atlântica Consultoria (Empresa Junior)</a><br>Estágio na área Comercial<br>(Agosto de 2023 - Abril de 2024)</li>
+                <li class="list-group-item"><a href="https://www.ufrgs.br/ceri/ceri-idiomas/" target="_blank">Curso de Idiomas do Centro Estudantil de Relações Internacionais (Projeto Voluntário)</a><br>Estágio na área Administrativa<br>(Outubro de 2023 - Abril de 2024)</li>
+                <li class="list-group-item"><a href="https://sbzadvogados.com.br/" target="_blank">SBZ Advogados</a><br>Representante Comercial<br>(Junho de 2024 - Outubro de 2024)</li>
+                <li class="list-group-item"><a href="https://sbzadvogados.com.br/" target="_blank">SBZ Advogados</a><br>Sales OP & Analista de Sistemas (Função dupla)<br>(Novembro de 2024 - atualmente)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Habilidades Section -->
+    <div class="section" id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <h5 class="card-title">Técnicas</h5>
+                    <ul>
+                        <li>HTML, CSS</li>
+                        <li>Python e C++</li>
+                        <li>Excel avançado (Google Sheets)</li>
+                        <li>Git, Github, Bibliotecas Python: Pandas; Jupyter; Request</li>
+                        <li>Criação de API's</li>
+                        <li>AWS Lambda, SQS e API Gateway</li>
+                        <li>Conhecimento básico de Linux</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <h5 class="card-title">Profissionais/Pessoais</h5>
+                    <ul>
+                        <li>Resolução de Conflitos</li>
+                        <li>Trabalho em equipe</li>
+                        <li>Organização e criatividade</li>
+                        <li>Comunicação clara e empática</li>
+                        <li>Profissionalismo</li>
+                        <li>Gestão de tempo</li>
+                        <li>Proatividade</li>
+                        <li>Visão Sistêmcia e Analítica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projetos Section -->
+    <div class="section" id="projetos">
+        <h2>Projetos</h2>
+        <div class="competence-box">
+            <ul class="list-unstyled">
+                <li><span class="fw-bold"><b>Sales OP (SBZ Advogados)</b></span></li>
+                <ul>
+                    <li>Análise e avaliação dos processos internos da Empresa</li>
+                    <li>Implementação de um processo otimizado de atendimento utilizando Chatbot e operadores, aumentando a capacidade de atendimento do setor em mais de 100%</li>
+                    <li>Capacitação de equipes para adaptação aos novos processos</li>
+                    <li>Controle automático de métricas gerais e individualizadas por planilhas com entrada e atualização automática de dados via API</li>
+                    <li>Criação de relatórios de vendas e controle de metas com gráficos dinâmicos via Google Sheets</li>
+                    <li>Apresentação periódica de indicadores e metas junto aos sócios proprietários</li>
+                    <li>Monitoramento e acompanhamento dos processos implantados e suporte técnico</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="competence-box">
+            <ul class="list-unstyled">
+                <li><span class="fw-bold"><b>Analista de Sistemas (SBZ Advogados)</b></span></li>
+                <ul>
+                    <li>Integração via API ZapSign para cadastro automático do cliente nas seguintes aplicações:</li>
+                    <ul>
+                        <li>ASAAS para controle de pagamento</li>
+                        <li>Whatsapp para contato com cliente</li>
+                        <li>Sheets para relatórios e acompanhamento</li>
+                        <li>Email para confirmação dos passos anteriores</li>
+                    </ul>
+                    <li>Integração via API ASAAS - NIBO desenvolvendo um controle de caixa e inadimplência integrado</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Contato Section -->
+    <div class="section" id="contato">
+        <h2>Contato</h2>
+        <div class="contact-info">
+            <p>Nome: Pedro Henrique Carteli Rossetto</p>
+            <p>Data de Nascimento: 03/11/2003</p>
+            <p>CPF: 023.119.470-60</p>
+            <p>Av. Perimetral Leste, 2500 - São Cristóvão II</p>
+            <p>Passo Fundo - Rio Grande do Sul</p>
+            <p>Celular: +55 (54) 996824779</p>
+            <p><a href="mailto:Pedrohcrossetto@gmail.com">Email: Pedrohcrossetto@gmail.com</a></p>
+            <p><a href="https://instagram.com/pedrohrossetto" target="_blank">Instagram: @pedrohrossetto</a></p>
+            <p><a href="https://www.linkedin.com/in/pedro-henrique-carteli-rossetto-085420262/" target="_blank">Linkedin: Pedro Henrique Carteli Rossetto</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Print functionality for PDF generation
+        function printResume() {
+            window.print();
+        }
+        
+        // You can call printResume() when needed, or add a print button
+        document.addEventListener('DOMContentLoaded', function() {
+            // Optional: Add a print button
+            const printBtn = document.createElement('button');
+            printBtn.textContent = 'Salvar como PDF';
+            printBtn.style.cssText = 'display: block; margin: 20px auto; padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;';
+            printBtn.onclick = printResume;
+            document.body.appendChild(printBtn);
+        });
+    </script>
+</body>
+</html>
