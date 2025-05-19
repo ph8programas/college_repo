@@ -19,6 +19,8 @@ public:
         vet = vetor_param;
     }
 
+
+    
     void CoutVetElements(const std::vector<int> &vetor) const
     {
         cout << "[";
@@ -80,6 +82,21 @@ public:
             vet_invertido[n - 1 - i] = temp;
         }
         return vet_invertido;
+    }
+
+    vector<int> VetElementInput(int tam_vet, int limite_inferior, int limite_superior)
+    {
+    vector<int> vet(tam_vet);
+    for (int i = 0; i < tam_vet; i++)
+    {
+        do
+        {
+            cout << "\nPreencha, com valores entre " << limite_inferior << " e " << limite_superior << ", o vet para a posição: " << i << endl;
+            cin >> vet[i];
+        } while (vet[i] < limite_inferior || vet[i] > limite_superior);
+        cout << "Posição " << i << " registrada com sucesso como " << vet[i] << endl;
+    }
+    return vet;
     }
 };
 
