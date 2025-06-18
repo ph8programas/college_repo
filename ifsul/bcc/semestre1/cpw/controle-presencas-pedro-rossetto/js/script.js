@@ -1,55 +1,79 @@
+// Dicionário principal para controle do código
+let participantes = {};
+
 const form_inscricao = document.getElementById("form_inscricao");
 const form_presenca = document.getElementById("form_presenca");
+const lista_inscritos = document.getElementById("lista_inscritos");
+const lista_presentes = document.getElementById("lista_presentes");
 
-form_inscricao.addEventListener("submit", handleFormSubmit);
-form_presenca.addEventListener("submit", handleFormSubmit);
+form_inscricao.addEventListener("submit", handleInscricaoSubmit);
+form_presenca.addEventListener("submit", handlePresencaSubmit);
 
-function handleFormSubmit(event) {
+function handleInscricaoSubmit(event) {
   event.preventDefault();
-  const form = event.target;
-  const form_data = new FormData(form);
-  const lista_inscritos = document.getElementById("lista_inscritos");
+
+  const form_data = new FormData(event.target);
   const nome = form_data.get("name");
-  const nomeFormatado = nome
+  const email = form_data.get("email").toLowerCase().trim();
+
+  if (participantes[email]) {
+    alert("Email já cadastrado!");
+    return;
+  }
+
+  const nome_formatado = nome
     .toLowerCase()
     .split(/\s+/)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
-  const email = form_data.get("email").toLowerCase().trim();
 
-  // Test to see from where the event is
-  if (form === form_inscricao) {
-    if (form === form_inscricao) {
-      const li = document.createElement("li");
-      li.textContent = `Nome: ${nomeFormatado}, Email: ${email}`;
-      lista_inscritos.appendChild(li);
-      form.reset();
-      alert("Inscrição realizada com sucesso!");
-    } else if (form === form_presenca) {
-      // Verifica se o email já está registrado
-      const lista_presentes = document.getElementById("lista_presentes");
-      if (isEmailInscrito(email)) {
-        const li = document.createElement("li");
-        li.textContent = `Presença registrada para: ${nomeFormatado}, Email: ${email}`;
-        lista_presentes.appendChild(li);
-        form.reset();
-        alert("Presença registrada com sucesso!");
-      } else {
-        alert("Email não encontrado na lista de inscritos.");
-      }
-    }
-  }
+  participantes[email] = {
+    nome: nome_formatado,
+    presente: false,
+  };
+
+  const novo_item_inscrito = document.createElement("li");
+  novo_item_inscrito.textContent = `Nome: ${nome_formatado}, Email: ${email}`;
+  novo_item_inscrito.id = email;
+
+  lista_inscritos.appendChild(novo_item_inscrito);
+
+  event.target.reset();
+  alert("Inscrição realizada com sucesso!");
 }
 
-// função para verificar se o email já está registrado
-function isEmailInscrito(email) {
-  const lista_inscritos = document.getElementById("lista_inscritos");
-  const items = lista_inscritos.querySelectorAll("li");
-  for (const item of items) {
-    const match = item.textContent.match(/Email:\s*(.+)$/i);
-    if (match && match[1].trim() === email) {
-      return true;
-    }
+function handlePresencaSubmit(event) {
+  event.preventDefault();
+
+  const form_data = new FormData(event.target);
+  const email = form_data.get("email").toLowerCase().trim();
+
+  const participante = participantes[email];
+
+  if (!participante) {
+    alert("Email não encontrado na lista de inscritos.");
+    return;
   }
-  return false;
+
+  if (participante.presente) {
+    alert("Presença já registrada para esse email!");
+    return;
+  }
+
+  participante.presente = true;
+
+  // Usamos o email para encontrar o elemento pelo ID.
+  const item_para_mover = document.getElementById(email);
+
+  if (item_para_mover) {
+    item_para_mover.remove();
+  }
+
+  const novo_item_presente = document.createElement("li");
+  novo_item_presente.textContent = `Nome: ${participante.nome}, Email: ${email}`;
+
+  lista_presentes.appendChild(novo_item_presente);
+
+  event.target.reset();
+  alert("Presença registrada com sucesso!");
 }

@@ -21,7 +21,13 @@
           />
         </p>
         <p>
-          <input type="email" id="email" name="email" placeholder="E-mail" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="E-mail"
+            required
+          />
         </p>
         <button type="submit">Increver-se no Evento</button>
       </form>
@@ -34,7 +40,7 @@
           <input
             type="email"
             id="email_presenca"
-            name="email_presenca"
+            name="email"
             placeholder="E-mail Inscrito"
             required
           />
@@ -44,11 +50,11 @@
     </div>
 
     <div class="campo_participantes">
-      <h2>Lista de Inscritos:</h2>
+      <h2>Inscritos Ausentes:</h2>
       <ol id="lista_inscritos">
         <!-- Lista de inscritos será preenchida aqui -->
       </ol>
-      <h2>Lista de Presença:</h2>
+      <h2>Inscritos Presentes:</h2>
       <ol id="lista_presentes">
         <!-- Lista de presenças será preenchida aqui -->
       </ol>

@@ -1,24 +1,21 @@
-
-
 # Relatório de Progresso Semanal | Trabalho Final | Controle de Presenças em Evento
 
 ### Nome: Pedro Henrique Carteli Rossetto
 
-
-
 ## Relatório de Progresso - Semana 1
-### Data: 11/06/2025
-    
-### Progresso até então:
+
+### Data: 11/06/2025 - Quarta Feira
+
+#### Progresso até então:
+
     1. Criação da pasta do trabalho segundo o padrão estabelecido
     2. Inserção da pasta dentro de repositório do github
     3. Criação da estrutura de pastas
     4. Linkagem dos arquivos de html,css e js
     5. Instalação da extensão "Markdown All in One"
     6. criacao hmtl
-   
 
-### Código até então:
+#### HTML:
 
 ```
 <!DOCTYPE html>
@@ -75,6 +72,116 @@
 </html>
 ```
 
-### Página até então:
+#### Página até então:
 
 ![alt text](site_semana_1.png)
+
+## Relatório de Progresso - Semana 2
+
+### Data: 16/06/2025 - Segunda Feira
+
+Progredi no desenvolvimento do javascript.
+criei funções para o manuseio dos formulários (passo 2) utilizando os dados dos formularios como listas e regex simples (formulas pesquisadas) para manuseio.
+
+percebi que a forma de manipulação por lista estava inadequada para o projeto, finalizei o dia com o intuito de reformular na quarta feira para abordagem por dicionário afim de melhor manipular os dados de nome/email, formato pelo qual tenho também maior experiência, ainda que praticamente nula pela minha inexperiência em javascript.
+
+### Data: 18/06/2025 - Segunda Feira
+
+Reformulei a lógica para utilização de dicionários
+basicamente um dicionario com o seguinte formato:
+
+```
+"email@exemplo.com": { nome: "Nome Completo", presente: false },
+"email2@email.com": { nome: "Nome Completo", presente: true }
+```
+
+todo novo inscrito começa como false
+
+se o item presente for verdadeiro, irá ser movido para a lista de presentes e retirada da ausentes
+validação de existência e de status
+
+#### JavaScript:
+
+```
+// Dicionário principal para controle do código
+let participantes = {};
+
+const form_inscricao = document.getElementById("form_inscricao");
+const form_presenca = document.getElementById("form_presenca");
+const lista_inscritos = document.getElementById("lista_inscritos");
+const lista_presentes = document.getElementById("lista_presentes");
+
+form_inscricao.addEventListener("submit", handleInscricaoSubmit);
+form_presenca.addEventListener("submit", handlePresencaSubmit);
+
+function handleInscricaoSubmit(event) {
+  event.preventDefault();
+
+  const form_data = new FormData(event.target);
+  const nome = form_data.get("name");
+  const email = form_data.get("email").toLowerCase().trim();
+
+  if (participantes[email]) {
+    alert("Email já cadastrado!");
+    return;
+  }
+
+  const nome_formatado = nome
+    .toLowerCase()
+    .split(/\s+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  participantes[email] = {
+    nome: nome_formatado,
+    presente: false,
+  };
+
+  const novo_item_inscrito = document.createElement("li");
+  novo_item_inscrito.textContent = `Nome: ${nome_formatado}, Email: ${email}`;
+  novo_item_inscrito.id = email;
+
+  lista_inscritos.appendChild(novo_item_inscrito);
+
+  event.target.reset();
+  alert("Inscrição realizada com sucesso!");
+}
+
+
+function handlePresencaSubmit(event) {
+  event.preventDefault();
+
+  const form_data = new FormData(event.target);
+  const email = form_data.get("email").toLowerCase().trim();
+
+  const participante = participantes[email];
+
+  if (!participante) {
+    alert("Email não encontrado na lista de inscritos.");
+    return;
+  }
+
+  if (participante.presente) {
+    alert("Presença já registrada para esse email!");
+    return;
+  }
+
+  participante.presente = true;
+
+  // Usamos o email para encontrar o elemento pelo ID.
+  const item_para_mover = document.getElementById(email);
+
+  if (item_para_mover) {
+    item_para_mover.remove();
+  }
+
+  const novo_item_presente = document.createElement("li");
+  novo_item_presente.textContent = `Nome: ${participante.nome}, Email: ${email}`;
+
+  lista_presentes.appendChild(novo_item_presente);
+
+  event.target.reset();
+  alert("Presença registrada com sucesso!");
+}
+
+```
