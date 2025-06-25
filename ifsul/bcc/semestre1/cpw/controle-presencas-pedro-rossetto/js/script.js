@@ -33,7 +33,7 @@ function handleInscricaoSubmit(event) {
   };
 
   const novo_item_inscrito = document.createElement("li");
-  novo_item_inscrito.textContent = `Nome: ${nome_formatado}, Email: ${email}`;
+  novo_item_inscrito.textContent = `${nome_formatado}\n${email}`;
   novo_item_inscrito.id = email;
 
   lista_inscritos.appendChild(novo_item_inscrito);
@@ -70,7 +70,7 @@ function handlePresencaSubmit(event) {
   }
 
   const novo_item_presente = document.createElement("li");
-  novo_item_presente.textContent = `Nome: ${participante.nome}, Email: ${email}`;
+  novo_item_presente.textContent = `${participante.nome}\n${email}`;
 
   lista_presentes.appendChild(novo_item_presente);
 
