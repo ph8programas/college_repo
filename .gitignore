@@ -9,3 +9,7 @@ node_modules
 vscode
 __pycache__
 output
+*.exe
+*.out
+*.class
+*.ini
