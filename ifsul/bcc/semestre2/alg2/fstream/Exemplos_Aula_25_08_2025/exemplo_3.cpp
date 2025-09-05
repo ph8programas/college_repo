@@ -16,7 +16,7 @@ main()
     string texto;
     if(escreve.is_open())
     {
-        cout << "Informe um texto qualquer: ";
+        cout << "Informe um texto qualquer:~~ÇÇ ";
         getline(cin,texto);
         fflush(stdin);
         escreve << texto << "\n";

@@ -16,7 +16,7 @@ main()
    //cin << nome;
    gets(nome);
 
-   cout << "Nome informado: " << nome << endl;
+   cout << "Nome informado ~~: " << nome << endl;
 
    cout << "Total de caracteres do nome: " << strlen(nome) << endl;
 
