@@ -21,4 +21,7 @@ int main(void)
     mostraL(&lista);
     inserePrimeiroPar(&lista,11);
     mostraL(&lista);
+    insereAntesPrimeiroPar(&lista,232);
+    mostraL(&lista);
+
 }
